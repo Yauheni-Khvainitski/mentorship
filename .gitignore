@@ -4,5 +4,11 @@
 **/.terraform.lock.hcl
 **/*.tfstate*
 
+*.env
+
 docker_training/pg_data/**
-docker_training/postgres.env
+
+**/.ipynb_checkpoints/**
+*.ipynb
+
+*.parquet
