@@ -3,3 +3,6 @@
 **/.terraform/**
 **/.terraform.lock.hcl
 **/*.tfstate*
+
+docker_training/pg_data/**
+docker_training/postgres.env
