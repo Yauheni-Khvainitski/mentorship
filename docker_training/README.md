@@ -46,3 +46,19 @@ docker run -it \
     --name pgadmin \
     dpage/pgadmin4
 ```
+
+
+## Ingesting data locally
+
+### Ingest data using ingest_data.py
+
+To ingest data into the Postgres database, use the following command:
+
+```bash
+docker run -it \
+  --name ingest \
+  --network postgres_network \
+  taxi_ingest:v001 \
+  --table-name yellow_taxi_data \
+  --url https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet
+```
