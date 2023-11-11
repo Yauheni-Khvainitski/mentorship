@@ -10,10 +10,10 @@ resource "aws_instance" "postgres_server" {
 
 resource "aws_security_group" "postgres_server_security_group" {
   name        = var.postgres_security_group_name
-  description = "Allow inbound traffic for PostgreSQL"
+  description = "Allow inbound traffic for Postgres"
 
   ingress {
-    from_port   = 5432 # PostgreSQL
+    from_port   = 5432 # Postgres
     to_port     = 5432
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
