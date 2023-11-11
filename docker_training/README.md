@@ -48,6 +48,21 @@ docker run -it \
 ```
 
 
+## Creating database and pgAdmin using docker-compose
+
+To start the Postgres database and pgAdmin, use the following command:
+
+```bash
+docker-compose up -d
+```
+
+To shut down the Postgres database and pgAdmin, use the following command:
+
+```bash
+docker-compose down
+```
+
+
 ## Ingesting data locally
 
 ### Ingest data using ingest_data.py
@@ -55,9 +70,9 @@ docker run -it \
 To ingest data into the Postgres database, use the following command:
 
 ```bash
-docker run -it \
+docker run -it --rm\
   --name ingest \
-  --network postgres_network \
+  --network docker_training_postgres_network \
   taxi_ingest:v001 \
   --table-name yellow_taxi_data \
   --url https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet

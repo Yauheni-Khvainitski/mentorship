@@ -1,0 +1,23 @@
+services:
+  pg-database:
+    image: postgres:14
+    env_file:
+      - postgres.env
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data:rw
+    ports:
+      - 5432:5432
+    networks:
+      - postgres_network
+  pg-admin:
+    image: dpage/pgadmin4
+    env_file:
+      - pgadmin.env
+    ports:
+      - 8080:80
+    networks:
+      - postgres_network
+
+networks:
+  postgres_network:
+    driver: bridge

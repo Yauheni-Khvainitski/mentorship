@@ -1,5 +1,7 @@
 **/.idea/**
 
+**/poetry.lock
+
 **/.terraform/**
 **/.terraform.lock.hcl
 **/*.tfstate*
