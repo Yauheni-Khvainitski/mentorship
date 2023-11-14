@@ -14,3 +14,5 @@ docker_training/pg_data/**
 *.ipynb
 
 *.parquet
+
+./airflow/logs/**
