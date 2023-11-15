@@ -55,10 +55,10 @@ x-airflow-common:
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DB}
     # For backward compatibility, with Airflow <2.3
-    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
-    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DB}
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}/${POSTGRES_DB}
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
@@ -82,24 +82,24 @@ x-airflow-common:
     &airflow-common-depends-on
     redis:
       condition: service_healthy
-    postgres:
-      condition: service_healthy
+#    postgres:
+#      condition: service_healthy
 
 services:
-  postgres:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_USER}
-      POSTGRES_DB: ${POSTGRES_USER}
-    volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}"]
-      interval: 10s
-      retries: 5
-      start_period: 5s
-    restart: always
+#  postgres:
+#    image: postgres:13
+#    environment:
+#      POSTGRES_USER: ${POSTGRES_USER}
+#      POSTGRES_PASSWORD: ${POSTGRES_USER}
+#      POSTGRES_DB: ${POSTGRES_USER}
+#    volumes:
+#      - postgres-db-volume:/var/lib/postgresql/data
+#    healthcheck:
+#      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}"]
+#      interval: 10s
+#      retries: 5
+#      start_period: 5s
+#    restart: always
 
   redis:
     image: redis:latest

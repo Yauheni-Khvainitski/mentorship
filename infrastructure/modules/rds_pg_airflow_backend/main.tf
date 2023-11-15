@@ -34,6 +34,7 @@ resource "aws_db_instance" "airflow_backend" {
   engine_version         = "13"
   username               = var.airflow_user_name
   password               = var.airflow_password
+  db_name                = "airflow"
   vpc_security_group_ids = [aws_security_group.rds.id]
   parameter_group_name   = aws_db_parameter_group.rds_mentorship.name
   publicly_accessible    = true
