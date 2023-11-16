@@ -6,12 +6,13 @@ authors = ["Yauheni Khvainitski <euheniy.khvoinitski@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.13"
+python = ">=3.8,<3.12"
+pandas = "2.0"
+pyarrow = "^14.0.1"
+apache-airflow = "2.7.3"
 pgcli = "^4.0.1"
 jupyter = "^1.0.0"
-pandas = "^2.1.2"
-pyarrow = "^14.0.0"
-sqlalchemy = "^2.0.23"
+sqlalchemy = ">=1.4.28,<2.0"
 psycopg2 = "^2.9.9"
 python-dotenv = "^1.0.0"
 
