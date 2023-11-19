@@ -23,7 +23,7 @@ with DAG(
     start_date=datetime(2022, 1, 1),
     schedule_interval="@monthly",
     catchup=True,
-    max_active_runs=2,
+    max_active_runs=3,
 ) as dag:
 
     dummy_start = EmptyOperator(
@@ -31,6 +31,7 @@ with DAG(
     )
 
     for taxi_type in NY_TAXI_TYPES:
+        # TODO: move to ECS
         download_ny_taxi_data = BashOperator(
             task_id=f"download_{taxi_type}_ny_taxi_data",
             bash_command=f"curl -o "
@@ -54,6 +55,7 @@ with DAG(
             encrypt=True,
         )
 
+        # TODO: remove after moving download task to ECS
         remove_local_ny_taxi_data = BashOperator(
             task_id=f"remove_{taxi_type}_ny_taxi_data",
             bash_command=f"rm -f "
