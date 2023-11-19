@@ -16,4 +16,4 @@ docker_training/pg_data/**
 
 *.parquet
 
-./airflow/logs/**
+airflow_code/logs/**
