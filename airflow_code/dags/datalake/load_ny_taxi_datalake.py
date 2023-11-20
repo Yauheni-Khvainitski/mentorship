@@ -19,7 +19,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id="ny_taxi_to_datalake",
+    dag_id="ny_taxi_to_raw_datalake",
     start_date=datetime(2022, 1, 1),
     schedule_interval="@monthly",
     catchup=True,
@@ -43,11 +43,11 @@ with DAG(
         )
 
         load_to_datalake = LocalFilesystemToS3Operator(
-            task_id=f"{taxi_type}_taxi_data_to_datalake",
+            task_id=f"{taxi_type}_taxi_data_to_raw_datalake",
             filename=f"{NY_TAXI_LOCAL_FILESYSTEM_PREFIX}{taxi_type}_tripdata_"
                      f"{{{{ macros.ds_format(ds, '%Y-%m-%d', '%Y-%m') }}}}.{NY_TAXI_FILE_FORMAT}",
             dest_bucket=DATALAKE_BUKET,
-            dest_key=f"ny_taxi/{taxi_type}/{{{{ macros.ds_format(ds, '%Y-%m-%d', '%Y-%m') }}}}/"
+            dest_key=f"raw/ny_taxi/{taxi_type}/{{{{ macros.ds_format(ds, '%Y-%m-%d', '%Y-%m') }}}}/"
                      f"{taxi_type}_{{{{ macros.ds_format(ds, '%Y-%m-%d', '%Y-%m') }}}}"
                      f"_monthly_data.{NY_TAXI_FILE_FORMAT}",
             replace=True,
