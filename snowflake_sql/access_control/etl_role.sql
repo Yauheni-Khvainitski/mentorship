@@ -15,3 +15,6 @@ GRANT USAGE
 GRANT CREATE SCHEMA
     ON DATABASE mentorship_db
     TO ROLE etl;
+
+GRANT USAGE ON INTEGRATION mentorship_datalake
+    TO ROLE etl;
