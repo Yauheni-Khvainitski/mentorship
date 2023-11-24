@@ -16,6 +16,7 @@ def get_load_to_raw_dwh_operator(taxi_type_arg):
     sql_mapping = {
         "yellow": "sql/copy_ny_taxi_yellow_raw_dwh.sql",
         "green": "sql/copy_ny_taxi_green_raw_dwh.sql",
+        "fhv": "sql/copy_ny_taxi_fhv_raw_dwh.sql",
     }
 
     if taxi_type_arg in sql_mapping:
