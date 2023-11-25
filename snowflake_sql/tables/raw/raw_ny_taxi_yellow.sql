@@ -23,3 +23,5 @@ CREATE OR REPLACE TABLE mentorship_db.raw.ny_taxi_yellow (
     load_dttm TIMESTAMP_NTZ
 )
 CLUSTER BY (load_dttm);
+
+select * from mentorship_db.raw.ny_taxi_yellow limit 10;
