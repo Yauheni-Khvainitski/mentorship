@@ -20,3 +20,4 @@ airflow_code/logs/**
 
 dbt/mentorship/logs/**
 dbt/mentorship/dbt_packages/**
+dbt/mentorship/target/**

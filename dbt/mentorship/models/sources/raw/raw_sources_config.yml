@@ -5,9 +5,9 @@ sources:
     database: mentorship_db
     schema: raw
     tables:
-      - name: raw_ny_taxi_yellow
+      - name: ny_taxi_yellow
         description: >
-          This data dictionary describes yellow taxi trip data. For a dictionary describing 
+          Yellow taxi trip data. For a dictionary describing 
           green taxi data, or a map of the TLC Taxi Zones, please visit 
           [TLC Trip Record Data](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
         tags: [ny_taxi, raw, yellow]
