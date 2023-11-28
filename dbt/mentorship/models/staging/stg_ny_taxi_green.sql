@@ -2,9 +2,9 @@
 
 {%- set yaml_metadata -%}
 source_model:
-    raw: 'ny_taxi_yellow'
+    raw: 'ny_taxi_green'
 ldts: 'load_dttm'
-rsrc: '!yellow_ny_taxi_data'
+rsrc: '!green_ny_taxi_data'
 hashed_columns:
     hk_vendor:
         - vendor_id
@@ -17,20 +17,20 @@ hashed_columns:
     hk_payment_type:
         - payment_type
 derived_columns:
-    tpep_pickup_datetime_epoch:
-        value: 'tpep_pickup_datetime'
+    lpep_pickup_datetime_epoch:
+        value: 'lpep_pickup_datetime'
         datatype: 'BIGINT'
-    tpep_pickup_datetime_derived_ts:
-        value: 'TO_TIMESTAMP_NTZ(tpep_pickup_datetime / 1000000)'
+    lpep_pickup_datetime_derived_ts:
+        value: 'TO_TIMESTAMP_NTZ(lpep_pickup_datetime / 1000000)'
         datatype: 'TIMESTAMP_NTZ'
-    tpep_dropoff_datetime_epoch:
-        value: 'tpep_dropoff_datetime'
+    lpep_dropoff_datetime_epoch:
+        value: 'lpep_dropoff_datetime'
         datatype: 'BIGINT'
-    tpep_dropoff_datetime_derived_ts:
-        value: 'TO_TIMESTAMP_NTZ(tpep_dropoff_datetime / 1000000)'
+    lpep_dropoff_datetime_derived_ts:
+        value: 'TO_TIMESTAMP_NTZ(lpep_dropoff_datetime / 1000000)'
         datatype: 'TIMESTAMP_NTZ'
     taxi_type:
-        value: '!yellow'
+        value: '!green'
         datatype: 'STRING'
 {%- endset -%}
 
