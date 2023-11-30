@@ -24,7 +24,6 @@ sources:
           - name: vendor_id
             description: >
               A code indicating the provider that provided the record.
-              1 = Creative Mobile Technologies, LLC; 2 = VeriFone Inc.
               Technology providers authorized under the Taxicab & Livery Passenger 
               Enhancement Programs (TPEP/LPEP)
           - name: passenger_count
@@ -42,12 +41,6 @@ sources:
           - name: ratecode_id
             description: >
               The final rate code in effect at the end of the trip.
-              1= Standard rate
-              2=JFK
-              3=Newark
-              4=Nassau or Westchester
-              5=Negotiated fare
-              6=Group ride
           - name: store_and_fwd_flag
             description: >
               This flag indicates whether the trip record was held in vehicle
@@ -58,12 +51,6 @@ sources:
           - name: payment_type
             description: >
               A numeric code signifying how the passenger paid for the trip.
-              1= Credit card
-              2= Cash
-              3= No charge
-              4= Dispute
-              5= Unknown
-              6= Voided trip
           - name: fare_amount
             description: >
               The time-and-distance fare calculated by the meter.
@@ -125,7 +112,6 @@ sources:
             - name: vendor_id
               description: >
                 A code indicating the provider that provided the record.
-                1 = Creative Mobile Technologies, LLC; 2 = VeriFone Inc.
                 Technology providers authorized under the Taxicab & Livery Passenger 
                 Enhancement Programs (TPEP/LPEP)
             - name: passenger_count
@@ -143,12 +129,6 @@ sources:
             - name: ratecode_id
               description: >
                 The final rate code in effect at the end of the trip.
-                1= Standard rate
-                2=JFK
-                3=Newark
-                4=Nassau or Westchester
-                5=Negotiated fare
-                6=Group ride
             - name: store_and_fwd_flag
               description: >
                 This flag indicates whether the trip record was held in vehicle
@@ -159,12 +139,6 @@ sources:
             - name: payment_type
               description: >
                 A numeric code signifying how the passenger paid for the trip.
-                1= Credit card
-                2= Cash
-                3= No charge
-                4= Dispute
-                5= Unknown
-                6= Voided trip
             - name: fare_amount
               description: >
                 The time-and-distance fare calculated by the meter.

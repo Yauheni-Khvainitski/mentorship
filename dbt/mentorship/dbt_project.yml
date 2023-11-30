@@ -36,6 +36,12 @@ models:
     hubs:
       +schema: hubs
 
+seeds:
+  mentorship:
+    +database: mentorship_db
+    +schema: raw
+    +quote_columns: true
+
 vars:
   #Column Aliases
   datavault4dbt.ldts_alias: 'ldts'
