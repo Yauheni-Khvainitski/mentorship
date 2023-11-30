@@ -75,7 +75,7 @@ with DAG(
             dummy_start >> download_ny_taxi_data >> load_to_datalake >> remove_local_ny_taxi_data
 
     trigger_raw_dwh_load = TriggerDagRunOperator(
-        task_id=f"trigger_raw_dwh_load",
+        task_id="trigger_raw_dwh_load",
         trigger_dag_id="ny_taxi_to_raw_dwh",
         reset_dag_run=True,
         wait_for_completion=False,
