@@ -202,3 +202,30 @@ sources:
             - name: load_dttm
               description: >
                 Timestamp when the data was loaded into the table.
+
+      - name: ny_taxi_zones
+        description: >
+          TLC Taxi Zones
+        tags: [ ny_taxi, raw, zones ]
+        columns:
+          - name: location_id
+            description: >
+              The taxi zone in which the trip started or ended.
+          - name: borough
+            description: >
+              The borough in which the taxi zone is located.
+          - name: zone
+            description: >
+              The name of the taxi zone.
+          - name: service_zone
+            description: >
+              The service zone of the taxi zone.
+          - name: file_name
+            description: >
+              Path in S3 to the file where the data is stored.
+          - name: file_row_number
+            description: >
+              Row number in the file where the data is stored.
+          - name: load_dttm
+            description: >
+              Timestamp when the data was loaded into the table.

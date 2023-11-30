@@ -1,14 +1,12 @@
 {{ config(materialized='incremental') }}
 
 {%- set yaml_metadata -%}
-hashkey: 'hk_pickup_location'
+hashkey: 'hk_location_id'
 business_keys:
-    - pu_location_id
+    - location_id
 source_models:
-    - name: stg_ny_taxi_green
-      rsrc_static: 'green_ny_taxi_data'
-    - name: stg_ny_taxi_yellow
-      rsrc_static: 'yellow_ny_taxi_data'
+    - name: stg_ny_taxi_zones
+      rsrc_static: 'ny_taxi_zones_data'
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
@@ -20,4 +18,3 @@ source_models:
 {{ datavault4dbt.hub(hashkey=hashkey,
                     business_keys=business_keys,
                     source_models=source_models) }}
-
