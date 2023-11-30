@@ -32,6 +32,13 @@ derived_columns:
     taxi_type:
         value: '!yellow'
         datatype: 'STRING'
+prejoined_columns:
+    vendor_name:
+        ref_model: 'vendors'
+        bk: '"vendor_name"'
+        this_column_name: 'vendor_id'
+        ref_column_name: 'vendor_id'
+
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
@@ -41,11 +48,13 @@ derived_columns:
 {%- set rsrc = metadata_dict['rsrc'] -%}
 {%- set hashed_columns = metadata_dict['hashed_columns'] -%}
 {%- set derived_columns = metadata_dict['derived_columns'] -%}
+{%- set prejoined_columns = metadata_dict['prejoined_columns'] -%}
 
 {{ datavault4dbt.stage(
     source_model=source_model,
     ldts=ldts,
     rsrc=rsrc,
     hashed_columns=hashed_columns,
-    derived_columns=derived_columns
+    derived_columns=derived_columns,
+    prejoined_columns=prejoined_columns
     ) }}
