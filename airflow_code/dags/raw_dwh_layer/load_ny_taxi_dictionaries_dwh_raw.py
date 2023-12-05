@@ -10,7 +10,7 @@ default_args = {
 
 
 with DAG(
-    dag_id="ny_taxi_zones_to_raw_dwh",
+    dag_id="ny_taxi_dictionaries_to_raw_dwh",
     start_date=datetime(2023, 11, 1),
     schedule_interval=None,
 ) as dag:
@@ -18,4 +18,10 @@ with DAG(
         task_id="load_ny_taxi_zones_to_raw_dwh",
         snowflake_conn_id="snowflake",
         sql="sql/copy_ny_taxi_zones_raw_dwh.sql",
+    )
+
+    load_ny_taxi_vendors_to_dwh = SnowflakeOperator(
+        task_id="load_ny_taxi_vendors_to_raw_dwh",
+        snowflake_conn_id="snowflake",
+        sql="sql/copy_ny_taxi_vendors_raw_dwh.sql",
     )
