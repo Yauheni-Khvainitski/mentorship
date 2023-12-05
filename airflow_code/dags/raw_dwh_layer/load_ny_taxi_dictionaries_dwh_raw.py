@@ -25,3 +25,21 @@ with DAG(
         snowflake_conn_id="snowflake",
         sql="sql/copy_ny_taxi_vendors_raw_dwh.sql",
     )
+
+    load_ny_taxi_rate_codes_to_dwh = SnowflakeOperator(
+        task_id="load_ny_taxi_rate_codes_to_raw_dwh",
+        snowflake_conn_id="snowflake",
+        sql="sql/copy_ny_taxi_rate_codes_raw_dwh.sql",
+    )
+
+    load_ny_taxi_payment_types_to_dwh = SnowflakeOperator(
+        task_id="load_ny_taxi_payment_types_to_raw_dwh",
+        snowflake_conn_id="snowflake",
+        sql="sql/copy_ny_taxi_payment_types_raw_dwh.sql",
+    )
+
+    load_ny_taxi_green_trip_types_to_dwh = SnowflakeOperator(
+        task_id="load_ny_taxi_green_trip_types_to_raw_dwh",
+        snowflake_conn_id="snowflake",
+        sql="sql/copy_ny_taxi_green_trip_types_raw_dwh.sql",
+    )
