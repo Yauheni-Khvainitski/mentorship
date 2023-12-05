@@ -39,6 +39,18 @@ prejoined_columns:
         bk: 'vendor_name'
         this_column_name: 'vendor_id'
         ref_column_name: 'vendor_id'
+    rate_code_description:
+        src_name: 'raw'
+        src_table: 'ny_taxi_rate_codes'
+        bk: 'rate_code_description'
+        this_column_name: 'ratecode_id'
+        ref_column_name: 'rate_code_id'
+    payment_type_description:
+        src_name: 'raw'
+        src_table: 'ny_taxi_payment_types'
+        bk: 'payment_type_description'
+        this_column_name: 'payment_type'
+        ref_column_name: 'payment_type_id'
 
 {%- endset -%}
 
