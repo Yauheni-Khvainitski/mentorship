@@ -1,12 +1,6 @@
 version: 2
 
 seeds:
-  - name: vendors
-    description: >
-      A code indicating the provider that provided the record.
-      Technology providers authorized under the Taxicab & Livery Passenger 
-      Enhancement Programs (TPEP/LPEP)
-
   - name: rate_codes
     description: >
       The final rate code in effect at the end of the trip.

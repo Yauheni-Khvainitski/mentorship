@@ -180,7 +180,7 @@ sources:
       - name: ny_taxi_zones
         description: >
           TLC Taxi Zones
-        tags: [ ny_taxi, raw, zones ]
+        tags: [ ny_taxi, raw, zones, dictionary ]
         columns:
           - name: location_id
             description: >
@@ -203,3 +203,10 @@ sources:
           - name: load_dttm
             description: >
               Timestamp when the data was loaded into the table.
+
+      - name: ny_taxi_vendors
+        description: >
+          A code indicating the provider that provided the record.
+          Technology providers authorized under the Taxicab & Livery Passenger 
+          Enhancement Programs (TPEP/LPEP)
+        tags: [ ny_taxi, raw, vendors, dictionary ]

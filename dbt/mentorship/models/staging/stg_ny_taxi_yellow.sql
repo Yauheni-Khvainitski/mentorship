@@ -34,8 +34,9 @@ derived_columns:
         datatype: 'STRING'
 prejoined_columns:
     vendor_name:
-        ref_model: 'vendors'
-        bk: '"vendor_name"'
+        src_name: 'raw'
+        src_table: 'ny_taxi_vendors'
+        bk: 'vendor_name'
         this_column_name: 'vendor_id'
         ref_column_name: 'vendor_id'
 
