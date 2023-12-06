@@ -35,6 +35,8 @@ models:
       +schema: staging
     hubs:
       +schema: hubs
+    satellites:
+      +schema: satellites
 
 vars:
   #Column Aliases

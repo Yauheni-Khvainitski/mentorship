@@ -8,6 +8,13 @@ rsrc: '!ny_taxi_zones_data'
 hashed_columns:
     hk_location_id:
         - location_id
+    hd_location:
+        is_hashdiff: true
+        use_rtrim: true
+        columns:
+            - borough
+            - zone
+            - service_zone
 {%- endset -%}
 
 {%- set metadata_dict = fromyaml(yaml_metadata) -%}
