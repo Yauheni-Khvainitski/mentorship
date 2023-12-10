@@ -5,8 +5,10 @@ hashkey: 'hk_trip'
 business_keys:
     - do_location_id
     - pu_location_id
-    - pickup_datetime
-    - dropoff_datetime
+    - pickup_datetime_epoch
+    - dropoff_datetime_epoch
+    - pickup_datetime_ts
+    - dropoff_datetime_ts
     - payment_type
     - trip_distance
     - store_and_fwd_flag
@@ -20,6 +22,8 @@ source_models:
           - pu_location_id
           - tpep_pickup_datetime
           - tpep_dropoff_datetime
+          - tpep_pickup_datetime_derived_ts
+          - tpep_dropoff_datetime_derived_ts
           - payment_type
           - trip_distance
           - store_and_fwd_flag
@@ -33,6 +37,8 @@ source_models:
           - pu_location_id
           - lpep_pickup_datetime
           - lpep_dropoff_datetime
+          - lpep_pickup_datetime_derived_ts
+          - lpep_dropoff_datetime_derived_ts
           - payment_type
           - trip_distance
           - store_and_fwd_flag

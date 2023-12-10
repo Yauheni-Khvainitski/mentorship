@@ -21,6 +21,8 @@ hashed_columns:
         - pu_location_id
         - tpep_pickup_datetime
         - tpep_dropoff_datetime
+        - tpep_pickup_datetime_derived_ts
+        - tpep_dropoff_datetime_derived_ts
         - payment_type
         - trip_distance
         - store_and_fwd_flag
@@ -41,6 +43,12 @@ hashed_columns:
             - passenger_count
             - tip_amount
             - tolls_amount
+    hk_trip_to_pickup_location:
+        - hk_pickup_location
+        - hk_trip
+    hk_trip_to_dropoff_location:
+        - hk_dropoff_location
+        - hk_trip
 derived_columns:
     tpep_pickup_datetime_epoch:
         value: 'tpep_pickup_datetime'

@@ -37,6 +37,11 @@ models:
       +schema: hubs
     satellites:
       +schema: satellites
+    links:
+      +schema: links
+    marts:
+      +materialized: view
+      +schema: marts
 
 vars:
   #Column Aliases
