@@ -26,6 +26,21 @@ hashed_columns:
         - store_and_fwd_flag
         - total_amount
         - taxi_type
+    hd_trip:
+        is_hashdiff: true
+        use_rtrim: true
+        columns:
+            - ratecode_id
+            - vendor_id
+            - congestion_surcharge
+            - extra
+            - fare_amount
+            - improvement_surcharge
+            - mta_tax
+            - passenger_count
+            - tip_amount
+            - tolls_amount
+            - trip_type
 derived_columns:
     lpep_pickup_datetime_epoch:
         value: 'lpep_pickup_datetime'
