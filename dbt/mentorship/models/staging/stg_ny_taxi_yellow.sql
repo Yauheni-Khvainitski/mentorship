@@ -16,6 +16,16 @@ hashed_columns:
         - ratecode_id
     hk_payment_type:
         - payment_type
+    hk_trip:
+        - do_location_id
+        - pu_location_id
+        - tpep_pickup_datetime
+        - tpep_dropoff_datetime
+        - payment_type
+        - trip_distance
+        - store_and_fwd_flag
+        - total_amount
+        - taxi_type
 derived_columns:
     tpep_pickup_datetime_epoch:
         value: 'tpep_pickup_datetime'
