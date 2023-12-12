@@ -49,6 +49,14 @@ hashed_columns:
     hk_trip_to_dropoff_location:
         - hk_dropoff_location
         - hk_trip
+    hd_vendor:
+        is_hashdiff: true
+        use_rtrim: true
+        columns:
+            - vendor_name
+    hk_vendor_to_trip:
+        - hk_vendor
+        - hk_trip
 derived_columns:
     tpep_pickup_datetime_epoch:
         value: 'tpep_pickup_datetime'
