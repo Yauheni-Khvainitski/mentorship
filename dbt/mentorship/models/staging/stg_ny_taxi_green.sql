@@ -57,6 +57,14 @@ hashed_columns:
     hk_vendor_to_trip:
         - hk_vendor
         - hk_trip
+    hd_rate_code:
+        is_hashdiff: true
+        use_rtrim: true
+        columns:
+            - rate_code_description
+    hk_rate_code_to_trip:
+        - hk_rate_code
+        - hk_trip
 derived_columns:
     lpep_pickup_datetime_epoch:
         value: 'lpep_pickup_datetime'
