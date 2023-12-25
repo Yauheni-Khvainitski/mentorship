@@ -53,7 +53,7 @@ with DAG(
 
     trigger_raw_dwh_load = TriggerDagRunOperator(
         task_id="trigger_raw_dwh_load",
-        trigger_dag_id="ny_taxi_zones_to_raw_dwh",
+        trigger_dag_id="ny_taxi_dictionaries_to_raw_dwh",
         reset_dag_run=True,
         wait_for_completion=False,
     )
